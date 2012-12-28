@@ -23,7 +23,7 @@ Generator.prototype.askFor = function askFor() {
 		{
 			name: 'appName',
       message: 'Name of the app',
-      default: 'myApp'
+      default: 'app'
 		},
     {
       name: 'compassBootstrap',
@@ -56,7 +56,6 @@ Generator.prototype.askFor = function askFor() {
 Generator.prototype.createStructure = function createStructure() {
   var cb = this.async();
 
-  // OMG IT'S HERE -- CALLBACK HELL !!!
   fs.mkdirSync(this.appName);
   fs.mkdirSync(this.appName + '/static');
   fs.mkdirSync(this.appName + '/static/css');
