@@ -3,11 +3,12 @@
   Generator to use Yeoman on a Flask project.
 
   For more informations about Yeoman, see [Yeoman.io](http://yeoman.io/)
+
   For more informations about Flask, see [Flask.pocoo.org](http://flask.pocoo.org/)
 
 ## Installation
 
-  * This package is not published on npm yet *
+  *This package is not published on npm yet*
 
   Clone the repo then run `$ sudo python install.py`
 
