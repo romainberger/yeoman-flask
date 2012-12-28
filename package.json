@@ -1,0 +1,35 @@
+{
+  "name": "yeoman-flask",
+  "version": "0.1.0",
+  "description": "Yeoman generator for Flask project",
+  "homepage": "https://github.com/romainberger/yeoman-flask",
+  "author":{
+    "name": "Romain Berger",
+    "email": "romain@romainberger.com",
+    "url": "http://romainberger.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/romainberger/yeoman-flask.git"
+  },
+  "bugs": {
+    "url" : "https://github.com/romainberger/yeoman-flask/issues",
+    "email" : "romain@romainberger.com"
+  },
+  "dependencies": {
+  },
+  "keywords": [
+    "yeoman",
+    "python",
+    "flask",
+    "frameworks",
+    "micro frameworks",
+    "generator",
+    "cli",
+    "tool",
+    "development"
+  ],
+  "scripts": {
+    "install": "python install.py"
+  }
+}

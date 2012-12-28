@@ -1,0 +1,22 @@
+Description:
+	Yeoman generator to create a Flask project
+
+    This generator will create the basic file and structure
+    for a new Flask application
+
+Example:
+	yeoman init yeoman-flask
+
+	This will create:
+
+		.
+		|-- .gitattributes
+		|-- .gitignore
+		|-- Gruntfile.js
+		|-- app
+		|	|-- static
+		|		|-- css
+		|		|-- js
+		|		|-- img
+		|	|-- templates
+		|-- package.json
