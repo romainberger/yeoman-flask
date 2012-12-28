@@ -8,9 +8,7 @@
 
 ## Installation
 
-  *This package is not published on npm yet*
-
-  Clone the repo then run `$ sudo python install.py`
+  `$ sudo npm install -g yeoman-flask`
 
   This will install the generator globally so you will be able to use it everywhere.
 
