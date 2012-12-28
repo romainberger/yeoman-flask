@@ -36,6 +36,11 @@ Generator.prototype.askFor = function askFor() {
       message: 'Would you like to include the Twitter Bootstrap JS plugins?',
       default: 'Y/n',
       warning: 'Yes: All Twitter Bootstrap plugins will be placed into the JavaScript vendor directory.'
+    },
+    {
+      name: 'frozenFlask',
+      message: 'Do you want to use Frozen-Flask to build an static version of the app?',
+      default: 'Y/n'
     }
 	];
 
@@ -46,6 +51,7 @@ Generator.prototype.askFor = function askFor() {
     self.appName = props.appName;
     self.compassBootstrap = (/y/i).test(props.compassBootstrap);
     self.bootstrap = (/y/i).test(props.bootstrap);
+    self.frozenFlask = (/y/i).test(props.frozenFlask);
 
     cb();
   });
@@ -129,6 +135,13 @@ Generator.prototype.createAppFiles = function createAppFiles() {
 
   // make the server file executable
   exec('chmod a+x server.py');
+}
+
+// create the frozen-flask file to build a static version of the app
+Generator.prototype.createFreezeFile = function createFreezeFile() {
+  if (this.frozenFlask) {
+    this.template('freeze.py', 'freeze.py');
+  }
 }
 
 // create the yeoman and git files
