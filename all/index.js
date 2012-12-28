@@ -29,7 +29,7 @@ Generator.prototype.askFor = function askFor() {
       name: 'compassBootstrap',
       message: 'Would you like to include Twitter Bootstrap for Compass instead of CSS?',
       default: 'Y/n',
-      warning: 'Yes: All Twitter Bootstrap files will be placed into the styles directory.'
+      warning: 'Yes: All Twitter Bootstrap files will be placed into the css directory.'
     },
     {
       name: 'bootstrap',
@@ -40,7 +40,8 @@ Generator.prototype.askFor = function askFor() {
     {
       name: 'frozenFlask',
       message: 'Do you want to use Frozen-Flask to build an static version of the app?',
-      default: 'Y/n'
+      default: 'Y/n',
+      warning: 'Yes: You will be able to build a static version of your app with `$ python freeze.py`.'
     }
 	];
 
