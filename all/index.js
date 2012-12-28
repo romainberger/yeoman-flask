@@ -2,7 +2,8 @@ var util = require('util'),
     path = require('path'),
     fs = require('fs'),
     yeoman = require('../../../../'),
-    grunt = require('grunt');
+    grunt = require('grunt'),
+    exec = require('child_process').exec;
 
 module.exports = Generator;
 
@@ -126,6 +127,9 @@ Generator.prototype.createAppFiles = function createAppFiles() {
   this.template('views.py', this.appName + '/views.py');
   this.copy('index.html', this.appName + '/templates/index.html');
   this.copy('base.html', this.appName + '/templates/base.html');
+
+  // make the server file executable
+  exec('chmod a+x server.py');
 }
 
 // create the yeoman and git files
