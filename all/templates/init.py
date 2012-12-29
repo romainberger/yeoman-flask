@@ -8,7 +8,7 @@ import os
 
 # Function to easily find your assets
 # In your template use <link rel=stylesheet href="{{ static('filename') }}">
-app.jinja_env.globals['static'] = (
+<%= appName %>.jinja_env.globals['static'] = (
 	lambda filename: url_for('static', filename = filename)
 )
 
