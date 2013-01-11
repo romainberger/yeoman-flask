@@ -16,15 +16,15 @@ function Generator() {
 util.inherits(Generator, yeoman.generators.NamedBase);
 
 Generator.prototype.askFor = function askFor() {
-	var cb = this.async(),
+  var cb = this.async(),
       self = this;
 
-	var prompts = [
-		{
-			name: 'appName',
+  var prompts = [
+    {
+      name: 'appName',
       message: 'Name of the app',
       default: 'app'
-		},
+    },
     {
       name: 'compassBootstrap',
       message: 'Would you like to include Twitter Bootstrap for Compass instead of CSS?',
@@ -43,7 +43,7 @@ Generator.prototype.askFor = function askFor() {
       default: 'Y/n',
       warning: 'Yes: You will be able to build a static version of your app with `$ python freeze.py`.'
     }
-	];
+  ];
 
   self.prompt(prompts, function(e, props) {
     if (e) { return self.emit('error', e); }
@@ -57,23 +57,6 @@ Generator.prototype.askFor = function askFor() {
     cb();
   });
 
-}
-
-// create the basic app structure
-Generator.prototype.createStructure = function createStructure() {
-  var cb = this.async();
-
-  fs.mkdirSync(this.appName);
-  fs.mkdirSync(this.appName + '/static');
-  fs.mkdirSync(this.appName + '/static/css');
-  fs.mkdirSync(this.appName + '/static/js');
-  fs.mkdirSync(this.appName + '/static/js/vendors');
-  fs.mkdirSync(this.appName + '/static/img');
-  fs.mkdirSync(this.appName + '/templates');
-
-  this.copy('jquery-1.8.3.min.js', this.appName + '/static/js/vendors/jquery-1.8.3.min.js');
-
-  cb();
 }
 
 // The Bootstrap functions are copies from the basic Yeoman app generator, edited to fit with the flask app structure
@@ -133,6 +116,7 @@ Generator.prototype.createAppFiles = function createAppFiles() {
   this.template('views.py', this.appName + '/views.py');
   this.copy('index.html', this.appName + '/templates/index.html');
   this.copy('base.html', this.appName + '/templates/base.html');
+  this.copy('jquery-1.8.3.min.js', this.appName + '/static/js/vendors/jquery-1.8.3.min.js');
 
   // make the server file executable
   exec('chmod a+x server.py');
