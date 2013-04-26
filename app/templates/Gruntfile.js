@@ -186,4 +186,7 @@ module.exports = function( grunt ) {
   // Alias the `test` task to run the `mocha` task instead
   grunt.registerTask('test', 'server:phantom mocha');
 
+  // Load the build task
+  grunt.loadNpmTasks('yeoman-flask');
+
 };
