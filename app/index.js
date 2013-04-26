@@ -18,8 +18,8 @@ function Generator() {
 util.inherits(Generator, yeoman.generators.NamedBase)
 
 Generator.prototype.askFor = function askFor() {
-  var cb = this.async()
-    , self = this;
+  var cb   = this.async()
+    , self = this
 
   var prompts = [
     {
@@ -64,29 +64,30 @@ Generator.prototype.askFor = function askFor() {
 // Bootstrap plugins
 Generator.prototype.fetchBootstrap = function fetchBootstrap() {
   // prevent the bootstrap fetch is user said NO
-  if(!this.bootstrap) { return }
+  if(this.bootstrap) {
 
-  var cb = this.async()
-    , self = this
+    var cb   = this.async()
+      , self = this
 
-  // third optional argument is the branch / sha1. Defaults to master when ommitted.
-  this.remote('twitter', 'bootstrap', 'v2.1.0', function(err, remote, files) {
-    if (err) { return cb(err) }
+    // third optional argument is the branch / sha1. Defaults to master when ommitted.
+    this.remote('twitter', 'bootstrap', 'v2.1.0', function(err, remote, files) {
+      if (err) { return cb(err) }
 
-    'affix alert button carousel collapse dropdown modal popover scrollspy tab tooltip transition typeahead'.split(' ')
-    .forEach(function( el ) {
-      var filename = 'bootstrap-' + el + '.js'
-      remote.copy('js/' + filename, self.appName + '/static/js/vendors/bootstrap/' + filename)
+      'affix alert button carousel collapse dropdown modal popover scrollspy tab tooltip transition typeahead'.split(' ')
+      .forEach(function( el ) {
+        var filename = 'bootstrap-' + el + '.js'
+        remote.copy('js/' + filename, self.appName + '/static/js/vendors/bootstrap/' + filename)
+      })
+
+      cb()
     })
-
-    cb()
-  })
+  }
 }
 
 // Bootstrap css / scss
 Generator.prototype.compassBootstrapFiles = function compassBootstrapFiles() {
   if ( this.compassBootstrap ) {
-    var cb = this.async()
+    var cb   = this.async()
       , self = this
 
     this.write(this.appName + '/static/css/main.scss', '@import "compass_twitter_bootstrap";')
@@ -108,7 +109,7 @@ Generator.prototype.compassBootstrapFiles = function compassBootstrapFiles() {
 Generator.prototype.bootstrapImages = function bootstrapImages() {
   this.copy('glyphicons-halflings.png', this.appName + '/static/img/glyphicons-halflings.png')
   this.copy('glyphicons-halflings-white.png', this.appName + '/static/img/glyphicons-halflings-white.png')
-};
+}
 
 // create the basic files
 Generator.prototype.createAppFiles = function createAppFiles() {
