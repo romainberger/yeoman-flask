@@ -1,6 +1,6 @@
 {
-  "name": "flask-generator",
-  "version": "0.2.1",
+  "name": "generator-flask",
+  "version": "1.0.0",
   "description": "Yeoman generator for Flask project",
   "homepage": "https://github.com/romainberger/yeoman-flask",
   "author":{
