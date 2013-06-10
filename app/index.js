@@ -28,33 +28,31 @@ Generator.prototype.askFor = function askFor() {
       default: 'app'
     },
     {
+      type: 'confirm',
       name: 'compassBootstrap',
       message: 'Would you like to include Twitter Bootstrap for Compass instead of CSS?',
-      default: 'Y/n',
       warning: 'Yes: All Twitter Bootstrap files will be placed into the css directory.'
     },
     {
+      type: 'confirm',
       name: 'bootstrap',
       message: 'Would you like to include the Twitter Bootstrap JS plugins?',
-      default: 'Y/n',
-      warning: 'Yes: All Twitter Bootstrap plugins will be placed into the JavaScript vendor directory.'
+      warning: 'Yes: All Twitter Bootstrap plugins will be placed into the JavaScript vendor directory.',
     },
     {
+      type: 'confirm',
       name: 'frozenFlask',
       message: 'Do you want to use Frozen-Flask to build a static version of the app?',
-      default: 'Y/n',
       warning: 'Yes: You will be able to build a static version of your app with `$ python freeze.py`.'
     }
   ]
 
-  self.prompt(prompts, function(e, props) {
-    if (e) { return self.emit('error', e) }
-
+  self.prompt(prompts, function(props) {
     // set the properties
     self.appName = props.appName
-    self.compassBootstrap = (/y/i).test(props.compassBootstrap)
-    self.bootstrap = (/y/i).test(props.bootstrap)
-    self.frozenFlask = (/y/i).test(props.frozenFlask)
+    self.compassBootstrap = props.compassBootstrap
+    self.bootstrap = props.bootstrap
+    self.frozenFlask = props.frozenFlask
 
     cb()
   })
