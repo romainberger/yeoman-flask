@@ -118,8 +118,8 @@ module.exports = function( grunt ) {
     },
 
     // Below, all paths are relative to the staging directory, which is a copy
-    // of the app/ directory. Any .gitignore, .ignore and .buildignore file
-    // that might appear in the app/ tree are used to ignore these values
+    // of the <%= appName %>/ directory. Any .gitignore, .ignore and .buildignore file
+    // that might appear in the <%= appName %>/ tree are used to ignore these values
     // during the copy process.
 
     // concat css/**/*.css files, inline @import, output a single minified css
