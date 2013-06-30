@@ -12,17 +12,17 @@ module.exports = function( grunt ) {
 
     // specify an alternate install location for Bower
     bower: {
-      dir: 'app/components'
+      dir: '<%= appName %>/components'
     },
 
     // Coffee to JS compilation
     coffee: {
       compile: {
         files: {
-          'temp/js/*.js': 'app/static/js/*.coffee'
+          'temp/js/*.js': '<%= appName %>/static/js/*.coffee'
         },
         options: {
-          basePath: 'app/static/js'
+          basePath: '<%= appName %>/static/js'
         }
       }
     },
@@ -32,10 +32,10 @@ module.exports = function( grunt ) {
       dist: {
         // http://compass-style.org/help/tutorials/configuration-reference/#configuration-properties
         options: {
-          css_dir: 'app/static/css',
-          sass_dir: 'app/static/css',
-          images_dir: 'app/static/img',
-          javascripts_dir: 'app/static/js',
+          css_dir: '<%= appName %>/static/css',
+          sass_dir: '<%= appName %>/static/css',
+          images_dir: '<%= appName %>/static/img',
+          javascripts_dir: '<%= appName %>/static/js',
           force: true
         }
       }
@@ -54,21 +54,21 @@ module.exports = function( grunt ) {
     // default watch configuration
     watch: {
       coffee: {
-        files: 'app/static/js/*.coffee',
+        files: '<%= appName %>/static/js/*.coffee',
         tasks: 'coffee reload'
       },
       compass: {
         files: [
-          'app/static/css/*.{scss,sass}'
+          '<%= appName %>/static/css/*.{scss,sass}'
         ],
         tasks: 'compass reload'
       },
       reload: {
         files: [
-          'app/templates/*.html',
-          'app/static/css/**/*.css',
-          'app/static/js/**/*.js',
-          'app/static/img/**/*'
+          '<%= appName %>/templates/*.html',
+          '<%= appName %>/static/css/**/*.css',
+          '<%= appName %>/static/js/**/*.js',
+          '<%= appName %>/static/img/**/*'
         ],
         tasks: 'reload'
       }
@@ -79,7 +79,7 @@ module.exports = function( grunt ) {
     lint: {
       files: [
         'Gruntfile.js',
-        'app/static/js/**/*.js',
+        '<%= appName %>/static/js/**/*.js',
         'spec/**/*.js'
       ]
     },
@@ -114,7 +114,7 @@ module.exports = function( grunt ) {
     output: 'dist',
 
     mkdirs: {
-      staging: 'app/'
+      staging: '<%= appName %>/'
     },
 
     // Below, all paths are relative to the staging directory, which is a copy

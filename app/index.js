@@ -47,7 +47,7 @@ Generator.prototype.askFor = function askFor() {
     }
   ]
 
-  self.prompt(prompts, function(props) {
+  self.prompt(prompts, function(err, props) {
     // set the properties
     self.appName = props.appName
     self.compassBootstrap = props.compassBootstrap
@@ -131,7 +131,7 @@ Generator.prototype.createFreezeFile = function createFreezeFile() {
 
 // create the yeoman and git files
 Generator.prototype.createYeomanFiles = function createYeomanFiles() {
-  this.copy('Gruntfile.js', 'Gruntfile.js')
+  this.template('Gruntfile.js', 'Gruntfile.js')
   this.copy('gitignore', '.gitignore')
   this.copy('gitattributes', '.gitattributes')
 }
