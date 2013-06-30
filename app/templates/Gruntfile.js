@@ -165,11 +165,13 @@ module.exports = function( grunt ) {
     // you're using usemin-handler to parse rjs config from markup (default
     // setup)
     rjs: {
+      mainFile: '../<%= appName %>/templates/base.html',
       // no minification, is done by the min task
       optimize: 'none',
-      baseUrl: './scripts',
+      baseUrl: '../<%= appName %>/static/js',
       wrap: true,
-      name: 'main'
+      name: 'main',
+      out: '../<%= appname %>/static/js/script.js'
     },
 
     // While Yeoman handles concat/min when using
