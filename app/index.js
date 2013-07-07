@@ -47,7 +47,7 @@ Generator.prototype.askFor = function askFor() {
     }
   ]
 
-  self.prompt(prompts, function(err, props) {
+  self.prompt(prompts, function(props) {
     // set the properties
     self.appName = props.appName
     self.compassBootstrap = props.compassBootstrap
