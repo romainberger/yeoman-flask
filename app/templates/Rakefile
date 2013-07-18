@@ -1,0 +1,14 @@
+
+task :pythonserver do
+  system "./server.py"
+end
+
+task :yeoman do
+  system "yeoman server"
+end
+
+task :open do
+  system "open http://127.0.0.1:5000"
+end
+
+multitask :server => ['pythonserver', 'yeoman', 'open']

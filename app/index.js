@@ -134,6 +134,7 @@ Generator.prototype.createYeomanFiles = function createYeomanFiles() {
   this.template('Gruntfile.js', 'Gruntfile.js')
   this.copy('gitignore', '.gitignore')
   this.copy('gitattributes', '.gitattributes')
+  this.copy('Rakefile', 'Rakefile')
 }
 
 Generator.prototype.end = function end() {
