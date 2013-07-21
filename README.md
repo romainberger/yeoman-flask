@@ -18,8 +18,8 @@
 
 ### Server
 
-  Flask needs a development server to run in order to serve the application. To do so, run `$ ./server`. And to make Yeoman compile your compass stylesheets, run (in a separate terminal tab) `$ yeoman server`. Your application will be available at `127.0.0.1:5000`.
+  `$ make -j server` - Runs the application development server
 
 ### Build
 
-  If you decided to use [Frozen Flask](http://packages.python.org/Frozen-Flask/), run `$ python freeze.py` to build a static version of your app.
+  If you decided to use [Frozen Flask](http://packages.python.org/Frozen-Flask/), run `$ make build` to build a static version of your app.
