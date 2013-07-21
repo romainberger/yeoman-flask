@@ -134,9 +134,10 @@ Generator.prototype.createYeomanFiles = function createYeomanFiles() {
   this.template('Gruntfile.js', 'Gruntfile.js')
   this.copy('gitignore', '.gitignore')
   this.copy('gitattributes', '.gitattributes')
-  this.copy('Rakefile', 'Rakefile')
+  this.copy('Makefile', 'Makefile')
 }
 
 Generator.prototype.end = function end() {
-  this.log.writeln('\nYour app is ready !\n')
+  this.log.writeln('\nYour app is ready !')
+  this.log.writeln('Run `$ make -j server` to start running it\n')
 }
