@@ -1,4 +1,3 @@
-
 'use strict';
 
 var util   = require('util')
@@ -68,7 +67,7 @@ Generator.prototype.fetchBootstrap = function fetchBootstrap() {
       , self = this
 
     // third optional argument is the branch / sha1. Defaults to master when ommitted.
-    this.remote('twitter', 'bootstrap', 'v2.1.0', function(err, remote, files) {
+    this.remote('twbs', 'bootstrap', 'v2.1.0', function(err, remote, files) {
       if (err) { return cb(err) }
 
       'affix alert button carousel collapse dropdown modal popover scrollspy tab tooltip transition typeahead'.split(' ')
