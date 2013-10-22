@@ -24,7 +24,7 @@ Generator.prototype.askFor = function askFor() {
     {
       name: 'appName',
       message: 'Name of the app',
-      default: 'app'
+      default: path.basename(process.cwd())
     },
     {
       type: 'confirm',
