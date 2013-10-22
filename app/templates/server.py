@@ -1,4 +1,3 @@
-#!/usr/bin/env python
-from <%= appName %> import <%= appName %>
+from <%= appName %> import app
 
-<%= appName %>.run(debug = True)
+app.run(debug = True)
