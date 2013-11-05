@@ -89,6 +89,8 @@ Generator.prototype.compassBootstrapFiles = function compassBootstrapFiles() {
 
     this.write(this.appName + '/static/css/main.scss', '@import "compass_twitter_bootstrap";')
 
+    this.cssFiles = '<link rel="stylesheet" href="{{ static(\'css/main.css\') }}">'
+
     this.remote('kristianmandrup', 'compass-twitter-bootstrap', 'c3ccce2cca5ec52437925e8feaaa11fead51e132', function(err, remote) {
       if (err) { return cb(err) }
 
@@ -100,6 +102,11 @@ Generator.prototype.compassBootstrapFiles = function compassBootstrapFiles() {
   else {
     this.log.writeln('Writing compiled Bootstrap')
     this.copy('bootstrap.css', this.appName + '/static/css/bootstrap.css')
+    this.copy('main.css', this.appName + '/static/css/main.css')
+    this.cssFiles = [
+        '<link rel="stylesheet" href="{{ static(\'css/bootstrap.css\') }}">'
+      , '<link rel="stylesheet" href="{{ static(\'css/main.css\') }}">'
+    ].join("\n    ")
   }
 }
 
@@ -114,7 +121,7 @@ Generator.prototype.createAppFiles = function createAppFiles() {
   this.template('server.py', 'server.py')
   this.template('views.py', this.appName + '/views.py')
   this.copy('index.html', this.appName + '/templates/index.html')
-  this.copy('base.html', this.appName + '/templates/base.html')
+  this.template('base.html', this.appName + '/templates/base.html')
   this.copy('jquery-1.8.3.min.js', this.appName + '/static/js/vendors/jquery-1.8.3.min.js')
 
   // make the server file executable
