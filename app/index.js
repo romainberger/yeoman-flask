@@ -83,7 +83,7 @@ Generator.prototype.fetchBootstrap = function fetchBootstrap() {
 
 // Bootstrap css / scss
 Generator.prototype.compassBootstrapFiles = function compassBootstrapFiles() {
-  if ( this.compassBootstrap ) {
+  if (this.compassBootstrap) {
     var cb   = this.async()
       , self = this
 
