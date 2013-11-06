@@ -119,6 +119,7 @@ Generator.prototype.bootstrapImages = function bootstrapImages() {
 Generator.prototype.createAppFiles = function createAppFiles() {
   this.template('init.py', this.appName + '/__init__.py')
   this.template('server.py', 'server.py')
+  this.template('server_tests.py', this.appName + '_tests.py')
   this.template('views.py', this.appName + '/views.py')
   this.copy('index.html', this.appName + '/templates/index.html')
   this.template('base.html', this.appName + '/templates/base.html')
