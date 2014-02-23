@@ -29,14 +29,14 @@ Generator.prototype.askFor = function askFor() {
     {
       type: 'confirm',
       name: 'compassBootstrap',
-      message: 'Would you like to include Twitter Bootstrap for Compass instead of CSS?',
-      warning: 'Yes: All Twitter Bootstrap files will be placed into the css directory.'
+      message: 'Would you like to include Bootstrap for Compass instead of CSS?',
+      warning: 'Yes: All Bootstrap files will be placed into the css directory.'
     },
     {
       type: 'confirm',
       name: 'bootstrap',
-      message: 'Would you like to include the Twitter Bootstrap JS plugins?',
-      warning: 'Yes: All Twitter Bootstrap plugins will be placed into the JavaScript vendor directory.',
+      message: 'Would you like to include the Bootstrap JS plugins?',
+      warning: 'Yes: All Bootstrap plugins will be placed into the JavaScript vendor directory.',
     },
     {
       type: 'confirm',
