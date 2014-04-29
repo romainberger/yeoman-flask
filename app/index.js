@@ -123,7 +123,7 @@ Generator.prototype.createAppFiles = function createAppFiles() {
   this.template('views.py', this.appName + '/views.py')
   this.copy('index.html', this.appName + '/templates/index.html')
   this.template('base.html', this.appName + '/templates/base.html')
-  this.copy('jquery-1.8.3.min.js', this.appName + '/static/js/vendors/jquery-1.8.3.min.js')
+  this.copy('jquery-2.1.0.min.js', this.appName + '/static/js/vendors/jquery-2.1.0.min.js')
   this.copy('requirements.txt', 'requirements.txt')
 
   // make the server file executable
