@@ -2,9 +2,9 @@
 
   Generator to use Yeoman on a Flask project.
 
-  For more informations about Yeoman, see [Yeoman.io](http://yeoman.io/)
+  For more information about Yeoman, see [Yeoman.io](http://yeoman.io/)
 
-  For more informations about Flask, see [Flask.pocoo.org](http://flask.pocoo.org/)
+  For more information about Flask, see [Flask.pocoo.org](http://flask.pocoo.org/)
 
 ## Installation
 
